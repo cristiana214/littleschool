@@ -1,33 +1,43 @@
+// import { products } from "@/lib/data/farm";
+
 "use client";
 
 import ListProducts from "@/components/list-products";
 
 import ListCategoryTypes from "@/components/list-category-types";
-import { useCategory } from "@/hooks/query/useCategory";
+import { useCategoryType } from "@/hooks/query/useCategoryType";
+import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
-export default function CategoryPage({
+export default function SubCategory({
   params,
 }: {
-  params: { categoryURL: string };
+  params: { typeURL: string };
 }) {
-  const { data, isLoading, error } = useCategory({
-    categoryUrl: params?.categoryURL,
+  const { data, isLoading, error } = useCategoryType({
+    categoryTypeUrl: params?.typeURL,
   });
-  const category = data?.category;
+  const categoryType = data?.categoryType;
 
   return (
     <div className="container mx-auto w-8/12 p-4">
       <div className="mb-8">
-        <div className="flex items-center justify-between">
-          <h1 className="text-3xl font-bold">{category?.categoryName}</h1>
+        <div className="flex items-center">
+          <title>{categoryType?.typeName}</title>
+          <h1 className="text-3xl font-bold">{categoryType?.typeName}</h1>
+          <Link
+            className="ml-2"
+            href={`/category/${categoryType?.categoryUrl}/`}
+          >
+            <Badge variant="outline">{categoryType?.categoryName}</Badge>
+          </Link>
         </div>
         <h2 className="text-1xl mt-2 font-normal leading-tight tracking-tighter">
-          {category?.categoryDescription}
+          {categoryType?.typeDescription}
         </h2>
-        <title>{category?.categoryName}</title>
       </div>
-      <ListCategoryTypes url={params?.categoryURL} />
-      <ListProducts type="categoryUrl" url={params?.categoryURL} />
+      <ListCategoryTypes url={params.typeURL} />
+      <ListProducts type="categoryTypeUrl" url={params.typeURL} />
     </div>
   );
 }

@@ -33,9 +33,12 @@ export function MainNav({ items }: MainNavProps) {
               item.href && (
                 <Link
                   key={index}
-                  href={item.href}
+                  href={`/category/${item.href}`}
                   className={cn(
-                    "flex items-center text-sm font-medium text-muted-foreground hover:font-semibold hover:text-slate-700 dark:hover:text-slate-400",
+                    "flex items-center text-sm font-medium  hover:font-extrabold",
+                    item.color
+                      ? `hover:${item.color}`
+                      : " dark:hover:text-slate-400",
                     item.disabled && "cursor-not-allowed opacity-80",
                     index > 0 ? "hidden md:flex" : "", // Hide all but the first item on mobile
                   )}

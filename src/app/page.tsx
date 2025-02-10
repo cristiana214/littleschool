@@ -24,20 +24,22 @@ export default function IndexPage() {
       </h2>
 
       <div className="flex flex-wrap gap-4">
-        <Link href="/category/fruits/">
+        <Link href="/category/coding/">
+          <Button className="bg-blue-500 hover:font-semibold" rel="noreferrer">
+            Coding
+          </Button>
+        </Link>
+        <Link href="/category/math/">
           <Button className="bg-green-400 hover:font-semibold" rel="noreferrer">
-            Fruits
+            Math
           </Button>
         </Link>
-
-        <Link href="/category/fruit-vegetables/">
-          <Button className="bg-green-600 hover:font-semibold" rel="noreferrer">
-            Vegetables
-          </Button>
-        </Link>
-        <Link href="/category/coconuts/">
-          <Button className="bg-green-700 hover:font-semibold" rel="noreferrer">
-            Fresh Coconuts
+        <Link href="/category/science/">
+          <Button
+            className="bg-orange-500 hover:font-semibold"
+            rel="noreferrer"
+          >
+            Science
           </Button>
         </Link>
       </div>

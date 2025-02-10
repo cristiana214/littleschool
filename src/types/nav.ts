@@ -3,4 +3,5 @@ export type NavItem = {
   href?: string;
   disabled?: boolean;
   external?: boolean;
+  color?: string;
 };
