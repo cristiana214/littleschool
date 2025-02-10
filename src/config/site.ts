@@ -1,19 +1,20 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next Boilerplate",
+  name: "Little School",
   description:
     "lorem ipsum dolor sit amet, consectetur adipiscing elit lore, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  title: "Next Boilerplate",
+  title: "Little School",
   tagLine: "Your product tagline here! edit me in src/config/site.ts",
+  footerRights: "&copy; 2025 Little School by cristiana. All rights reserved.",
   mainNav: [
     {
-      title: "Link 1",
-      href: "/link1/",
+      title: "Science",
+      href: "/science/",
     },
     {
-      title: "Another link here",
-      href: "/link1/",
+      title: "Math",
+      href: "/math/",
     },
 
     {
@@ -23,12 +24,12 @@ export const siteConfig = {
   ],
   subNav: [
     {
-      title: "Link 1",
-      href: "/link1/",
+      title: "Quiz",
+      href: "/quiz/",
     },
     {
-      title: "Another link here",
-      href: "/link1/",
+      title: "Natural Science",
+      href: "/natural-science/",
     },
 
     {
