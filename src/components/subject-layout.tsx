@@ -27,7 +27,7 @@ export default function SubjectLayout({
 }: SubjectLayoutProps) {
   return (
     <div
-      className={`container mx-auto grid w-full max-w-6xl  gap-6 pb-8 pt-6  ${primaryColor}`}
+      className={`container mx-auto mt-8 grid w-full max-w-6xl  gap-6 pb-8 pt-6  ${primaryColor}`}
     >
       <div className="container mx-auto px-4 py-8">
         <h1 className={`mb-8 text-center text-5xl font-bold ${secondaryColor}`}>
