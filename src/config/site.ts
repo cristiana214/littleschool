@@ -24,6 +24,11 @@ export const siteConfig = {
       href: "/coding/",
       color: "text-green-400",
     },
+    {
+      title: "Videos",
+      href: "/videos/",
+      color: "text-amber-400",
+    },
 
     {
       title: "About Us",
