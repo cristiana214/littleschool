@@ -1,34 +1,44 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next Boilerplate",
+  name: "Little School",
   description:
-    "lorem ipsum dolor sit amet, consectetur adipiscing elit lore, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  title: "Next Boilerplate",
-  tagLine: "Your product tagline here! edit me in src/config/site.ts",
+    "Students can learn and have fun, teachers can create quizzes and test their students, and parents can support their kids’ learning in an engaging way.",
+  title: "All in one Learning Tool for Students, Teachers and Parents",
+  tagLine:
+    "Explore, learn, have fun and test your knowledge with quizzes and cool facts!",
+  footerRights: "&copy; 2025 Little School by cristiana. All rights reserved.",
   mainNav: [
     {
-      title: "Link 1",
-      href: "/link1/",
+      title: "Science",
+      href: "/science/",
+      color: "text-orange-500",
     },
     {
-      title: "Another link here",
-      href: "/link1/",
+      title: "Math",
+      href: "/math/",
+      color: "text-blue-500",
+    },
+    {
+      title: "Coding",
+      href: "/coding/",
+      color: "text-green-400",
     },
 
     {
       title: "About Us",
       href: "/about/",
+      color: "text-red-400",
     },
   ],
   subNav: [
     {
-      title: "Link 1",
-      href: "/link1/",
+      title: "Quiz",
+      href: "/quiz/",
     },
     {
-      title: "Another link here",
-      href: "/link1/",
+      title: "Natural Science",
+      href: "/natural-science/",
     },
 
     {
