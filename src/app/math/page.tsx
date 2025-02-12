@@ -3,34 +3,54 @@ import SubjectLayout from "@/components/subject-layout";
 export default function MathPage() {
   const mathTopics = [
     {
-      title: "Addition and Subtraction",
-      image: "/math/add-sub.webp?height=200&width=300",
-      color: "bg-green-100",
-    },
-    {
-      title: "Multiplication and Division",
-      image: "/placeholder.svg?height=200&width=300",
-      color: "bg-yellow-100",
-    },
-    {
-      title: "Fractions and Decimals",
-      image: "/placeholder.svg?height=200&width=300",
+      title: "Basic Addition & Subtraction",
+      image: "/math/addition.webp?height=200&width=300",
       color: "bg-orange-100",
     },
     {
-      title: "Geometry Shapes",
-      image: "/placeholder.svg?height=200&width=300",
-      color: "bg-purple-100",
+      title: "Multiplication",
+      image: "/math/multiplication.webp?height=200&width=300",
+      color: "bg-blue-100",
     },
     {
-      title: "Measurement Fun",
-      image: "/placeholder.svg?height=200&width=300",
+      title: "Division",
+      image: "/math/multiplication.webp?height=200&width=300",
       color: "bg-pink-100",
     },
     {
-      title: "Number Patterns",
-      image: "/placeholder.svg?height=200&width=300",
-      color: "bg-blue-100",
+      title: "Fractions and Decimals",
+      image: "/math/fractions.webp?height=200&width=300",
+      color: "bg-green-100",
+    },
+    {
+      title: "Counting Money",
+      image: "/math/time.webp?height=200&width=300",
+      color: "bg-yellow-100",
+    },
+    {
+      title: "Geometry Shapes and Patterns",
+      image: "/math/geometry.webp?height=200&width=300",
+      color: "bg-red-100",
+    },
+    {
+      title: "Telling Time",
+      image: "/math/time.webp?height=200&width=300",
+      color: "bg-yellow-100",
+    },
+    {
+      title: "Math Puzzles and Riddles",
+      image: "/math/puzzles.webp?height=200&width=300",
+      color: "bg-purple-100",
+    },
+    {
+      title: "Introduction to Algebra",
+      image: "/math/algebra.webp?height=200&width=300",
+      color: "bg-teal-100",
+    },
+    {
+      title: "Measurement and Units",
+      image: "/math/measurement.webp?height=200&width=300",
+      color: "bg-gray-100",
     },
   ];
 

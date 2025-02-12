@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { getDarkerShade } from "@/lib/helper/color-help";
 
 interface SubTopic {
   title: string;
@@ -61,43 +62,7 @@ export default function SubjectLayout({
                   </p>
                   <Button
                     asChild
-                    className={`w-full ${(() => {
-                      const match = topic.color.match(/^(bg-[a-zA-Z]+)-(\d+)$/);
-                      if (match) {
-                        const [, base, shade] = match;
-                        let newShade = shade;
-                        switch (shade) {
-                          case "50":
-                            newShade = "200";
-                            break;
-                          case "100":
-                            newShade = "300";
-                            break;
-                          case "200":
-                            newShade = "400";
-                            break;
-                          case "300":
-                            newShade = "500";
-                            break;
-                          case "400":
-                            newShade = "500";
-                            break;
-                          case "500":
-                            newShade = "600";
-                            break;
-                          case "600":
-                            newShade = "700";
-                            break;
-                          case "700":
-                            newShade = "800";
-                            break;
-                          default:
-                            newShade = shade;
-                        }
-                        return `${base}-${newShade}`;
-                      }
-                      return topic.color;
-                    })()}`}
+                    className={`w-full ${getDarkerShade(topic.color)}`}
                   >
                     <Link href="#">Explore</Link>
                   </Button>
@@ -128,7 +93,7 @@ export default function SubjectLayout({
                   Exciting {subject} Adventure
                 </h3>
                 <p className={`mt-2 ${secondaryColor}`}>
-                  Join us on an amazing journey through the world of {subject}!
+                  Join us on learning {subject}!
                 </p>
                 <Button className="mt-4">Watch Now</Button>
               </CardContent>
@@ -138,7 +103,7 @@ export default function SubjectLayout({
 
         <section>
           <h2 className={`mb-4 text-3xl font-semibold ${secondaryColor}`}>
-            Fun Quiz
+            Quiz
           </h2>
           <Card
             className={`${primaryColor} transition duration-300 hover:scale-105`}
@@ -148,7 +113,7 @@ export default function SubjectLayout({
                 Test Your {subject} Knowledge!
               </h3>
               <p className={`mt-2 ${secondaryColor}`}>
-                Are you ready for a fun {subject} challenge?
+                Are you ready for a {subject} challenge?
               </p>
               <Button asChild className="mt-4">
                 <Link href={`/${subject.toLowerCase()}/quiz`}>Start Quiz</Link>
