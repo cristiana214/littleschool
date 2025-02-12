@@ -33,7 +33,7 @@ export function MainNav({ items }: MainNavProps) {
               item.href && (
                 <Link
                   key={index}
-                  href={`/category/${item.href}`}
+                  href={`${item.href}`}
                   className={cn(
                     "flex items-center text-sm font-medium  hover:font-extrabold",
                     item.color
