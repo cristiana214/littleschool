@@ -6,8 +6,8 @@ import CartTotal from "./cart-total";
 
 export function SiteHeader() {
   return (
-    <header className="mx-auto flex w-full  bg-background shadow-sm">
-      <div className="container flex h-16 max-w-6xl items-center space-x-4  sm:justify-between sm:space-x-0">
+    <header className=" mx-auto flex w-full  bg-background shadow-sm hover:shadow-md">
+      <div className="container flex h-16 max-w-6xl items-center space-x-4  sm:justify-between sm:space-x-0 ">
         <MainNav items={siteConfig.mainNav} />
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-1">
