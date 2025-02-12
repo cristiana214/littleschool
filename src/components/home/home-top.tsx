@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import Link from "next/link";
 
 export default function HomeTop() {
   return (
@@ -7,9 +8,11 @@ export default function HomeTop() {
         {/* <h1 className="mb-12 mt-2 justify-start text-center text-4xl font-bold">
          {siteConfig.title} 
         </h1> */}
-        <h2 className=" ml-4 justify-start  text-3xl font-bold">
-          Watch latest videos
-        </h2>
+        <Link href="/videos/" title="Little School Latest Videos">
+          <h2 className="ml-4 justify-start text-3xl  font-bold hover:text-amber-300">
+            Watch latest videos
+          </h2>
+        </Link>
         <div className="m-4 flex flex-col gap-16">
           {/* Section 1 - Video on left, description on right */}
           <div className="flex flex-col items-center gap-8 md:flex-row">
@@ -17,7 +20,7 @@ export default function HomeTop() {
               <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg hover:shadow-2xl">
                 <iframe
                   src="https://www.youtube.com/embed/wT3oU30zF9I"
-                  title="Video 1"
+                  title="Types of Force"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className="size-full"
@@ -46,7 +49,7 @@ export default function HomeTop() {
               <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg hover:shadow-2xl">
                 <iframe
                   src="https://www.youtube.com/embed/eqY3NUrMbuo"
-                  title="Video 2"
+                  title="What are Amphibians?"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className="size-full"
@@ -72,7 +75,7 @@ export default function HomeTop() {
               <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg hover:shadow-2xl">
                 <iframe
                   src="https://www.youtube.com/embed/IwfFTQ1eHYI"
-                  title="Video 2"
+                  title="Pollinators"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className="size-full"

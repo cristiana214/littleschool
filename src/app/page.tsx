@@ -10,7 +10,7 @@ import HomeFeatures from "@/components/home/home-features";
 export default function IndexPage() {
   return (
     <section className="container mx-auto grid w-full max-w-6xl  gap-6 pb-8 pt-6 ">
-      <title>{siteConfig.title}</title>
+      <title>{`${siteConfig.title}| Little School`}</title>
       <div className="mx-auto w-full py-4">
         <h1 className="text-4xl font-bold tracking-tighter sm:text-4xl">
           {siteConfig.title}
