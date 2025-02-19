@@ -1,5 +1,4 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import "plyr-react/plyr.css";
 import { useState, useRef } from "react";
 import Image from "next/image";
 import { LucidePlay } from "lucide-react";
