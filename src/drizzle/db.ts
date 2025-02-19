@@ -1,12 +1,17 @@
+/* eslint-disable import/no-extraneous-dependencies */
 // https://orm.drizzle.team/docs/get-started-mysql
-import { drizzle } from "drizzle-orm/mysql2";
-import mysql from "mysql2/promise";
-
-const pool = mysql.createPool({
-  host: process.env.DATABASE_URL,
-  user: process.env.DATABASE_USERNAME,
-  password: process.env.DATABASE_PASSWORD,
-  database: process.env.DATABASE_NAME,
+// https://orm.drizzle.team/docs/get-started-postgresql
+import { drizzle } from "drizzle-orm/node-postgres";
+import { Pool } from "pg";
+import * as schema from "./schema";
+// create a new PostgreSQL client instance
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL_POOL,
+  ssl:
+    process.env.NODE_ENV === "production"
+      ? { rejectUnauthorized: false }
+      : undefined, // Enable SSL in production if needed
 });
-// { logger: true }
-export const db = drizzle(pool, { logger: true });
+
+// initialize Drizzle with the pool
+export const db = drizzle(pool, { schema });
