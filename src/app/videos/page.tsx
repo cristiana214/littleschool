@@ -1,7 +1,7 @@
 "use client";
 
 import OtherVideos from "@/components/home/popular-topics";
-import Video from "@/components/reusable/player";
+import VideoPlayer from "@/components/reusable/video-player";
 
 export default function Videos() {
   return (
@@ -18,7 +18,16 @@ export default function Videos() {
           </h2>
           <div className="relative aspect-video">
             <div className="w-full justify-self-center md:w-3/4">
-              <Video src="vUpG4NL7R_k" maxRes />
+              <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg hover:shadow-2xl">
+                {/* <iframe
+                  src={`https://www.youtube.com/embed/${videoUrl}`}
+                  title="Video 1"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="size-full"
+                /> */}
+                <VideoPlayer src="vUpG4NL7R_k" maxRes />
+              </div>
             </div>
           </div>
         </div>

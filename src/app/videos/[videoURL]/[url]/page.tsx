@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unstable-nested-components */
 
-import VideoContent from "@/components/videos/page";
+import VideoContent from "@/components/videos/video-content";
 
 export default function VideoPage({
   params,

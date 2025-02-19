@@ -7,7 +7,7 @@ import HomeTop from "@/components/home/home-top";
 import HomeCategory from "@/components/home/home-category";
 import HomeFeatures from "@/components/home/home-features";
 import Facts from "@/components/home/facts";
-import LatestContent from "@/components/home/latest-contents";
+// import LatestContent from "@/components/home/latest-contents";
 
 export default function IndexPage() {
   return (
@@ -24,7 +24,7 @@ export default function IndexPage() {
 
       <HomeTop />
       <Facts />
-      <LatestContent />
+      {/* <LatestContent /> */}
 
       <div className="flex flex-wrap gap-4 px-4">
         <Link href="/coding/">

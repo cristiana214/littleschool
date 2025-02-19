@@ -2,7 +2,7 @@
 
 import { useVideos } from "@/hooks/query/useVideos";
 import Link from "next/link";
-import Video from "@/components/reusable/player";
+import Video from "@/components/reusable/video-player";
 import HomeTopSkeleton from "@/components/loading/homeTop";
 
 export default function HomeTop() {

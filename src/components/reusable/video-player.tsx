@@ -9,27 +9,19 @@ let currentlyPlaying: any = null;
 
 interface Props {
   src: string;
-  type?: "trailer" | "gameplay";
   maxRes?: boolean;
 }
 
 const VideoThumb = ({
   src,
-  type,
   onClick,
   maxRes,
 }: {
   src: string;
-  type?: Props["type"];
   onClick: () => void;
   maxRes: boolean;
 }) => (
   <div className="flex size-full cursor-pointer items-center justify-center">
-    {type && (
-      <div className="absolute bottom-0 left-0 z-[2] w-1/2 bg-gradient-to-r from-black via-black/70 to-transparent p-2 text-sm uppercase text-slate-100 sm:px-4 sm:py-2 sm:text-base">
-        {type}
-      </div>
-    )}
     <LucidePlay
       className="absolute z-[1] h-12 w-16 rounded-2xl bg-black/70 fill-white px-6 py-4 hover:bg-green-500"
       onClick={onClick}
@@ -48,7 +40,7 @@ const VideoThumb = ({
   </div>
 );
 
-const Video = ({ src, type, maxRes = false }: Props) => {
+const VideoPlayer = ({ src, maxRes = false }: Props) => {
   const [falsyField, setFalsyField] = useState<boolean>(false);
   const playerRef = useRef<ReactPlayer | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -91,16 +83,11 @@ const Video = ({ src, type, maxRes = false }: Props) => {
         />
       ) : (
         <div className="relative aspect-video size-full">
-          <VideoThumb
-            src={src}
-            type={type}
-            onClick={handlePlay}
-            maxRes={maxRes}
-          />
+          <VideoThumb src={src} onClick={handlePlay} maxRes={maxRes} />
         </div>
       )}
     </div>
   );
 };
 
-export default Video;
+export default VideoPlayer;

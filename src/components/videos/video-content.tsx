@@ -1,7 +1,7 @@
 "use client";
 
 import OtherVideos from "@/components/home/popular-topics";
-import Video from "@/components/reusable/player";
+import VideoPlayer from "@/components/reusable/video-player";
 
 import { useVideo } from "@/hooks/query/useVideo";
 
@@ -44,14 +44,14 @@ export default function VideoContent({ videoUrl }: { videoUrl?: string }) {
           <div className="relative aspect-video">
             <div className="w-full justify-self-center md:w-3/4">
               <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg hover:shadow-2xl">
-                <iframe
+                {/* <iframe
                   src={`https://www.youtube.com/embed/${videoUrl}`}
                   title="Video 1"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className="size-full"
-                />
-                <Video src={video?.videoUrl || ""} maxRes />
+                /> */}
+                <VideoPlayer src={video?.videoUrl || ""} maxRes />
               </div>
               <div className="m-4 text-lg">{video?.description}</div>
             </div>
