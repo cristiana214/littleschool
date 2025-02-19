@@ -171,11 +171,14 @@ export default function CodingPage() {
   ];
 
   return (
-    <SubjectLayout
-      subject="Coding"
-      subTopics={codingTopics}
-      primaryColor="bg-amber-50"
-      secondaryColor="text-orange-800"
-    />
+    <>
+      <title>Coding for kids | Little School</title>
+      <SubjectLayout
+        subject="Coding"
+        subTopics={codingTopics}
+        primaryColor="bg-amber-50"
+        secondaryColor="text-orange-800"
+      />
+    </>
   );
 }

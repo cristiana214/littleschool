@@ -1,4 +1,5 @@
 import SubjectLayout from "@/components/subject-layout";
+import { siteConfig } from "@/config/site";
 
 export default function SciencePage() {
   const scienceTopics = [
@@ -10,7 +11,7 @@ export default function SciencePage() {
         "Let's blast off into space and explore the planets, moons, and stars!",
     },
     {
-      title: "Fun Chemistry Experiments",
+      title: "Chemistry Experiments",
       image: "/science/chemistry.webp?height=200&width=300",
       color: "bg-red-100",
       description:
@@ -232,11 +233,14 @@ export default function SciencePage() {
   ];
 
   return (
-    <SubjectLayout
-      subject="Science"
-      subTopics={scienceTopics}
-      primaryColor="bg-blue-50"
-      secondaryColor="text-blue-800"
-    />
+    <>
+      <title>Science for kids | Little School</title>
+      <SubjectLayout
+        subject="Science"
+        subTopics={scienceTopics}
+        primaryColor="bg-blue-50"
+        secondaryColor="text-blue-800"
+      />
+    </>
   );
 }

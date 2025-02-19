@@ -30,11 +30,11 @@ export const siteConfig = {
       color: "text-amber-400",
     },
 
-    {
-      title: "About Us",
-      href: "/about/",
-      color: "text-red-400",
-    },
+    // {
+    //   title: "About Us",
+    //   href: "/about/",
+    //   color: "text-red-400",
+    // },
   ],
   subNav: [
     {

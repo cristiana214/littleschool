@@ -3,9 +3,14 @@ import SubjectLayout from "@/components/subject-layout";
 export default function MathPage() {
   const mathTopics = [
     {
-      title: "Basic Addition & Subtraction",
+      title: "Basic Addition",
       image: "/math/addition.webp?height=200&width=300",
       color: "bg-orange-100",
+    },
+    {
+      title: "Subtraction",
+      image: "/math/addition.webp?height=200&width=300",
+      color: "bg-lime-100",
     },
     {
       title: "Multiplication",
@@ -55,11 +60,14 @@ export default function MathPage() {
   ];
 
   return (
-    <SubjectLayout
-      subject="Math"
-      subTopics={mathTopics}
-      primaryColor="bg-green-50"
-      secondaryColor="text-green-800"
-    />
+    <>
+      <title>Math for kids | Little School</title>
+      <SubjectLayout
+        subject="Math"
+        subTopics={mathTopics}
+        primaryColor="bg-green-50"
+        secondaryColor="text-green-800"
+      />
+    </>
   );
 }
