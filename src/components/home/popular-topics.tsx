@@ -8,7 +8,17 @@ export default function OtherVideos({ videoUrl }: { videoUrl?: string }) {
   const { data, isLoading, error } = useVideos({
     pageSize: 4,
   });
-  if (isLoading) return "Loading...";
+  if (isLoading)
+    return (
+      <div className="animate-pulse">
+        <div className="mb-4 h-6 rounded bg-gray-300" />
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {[...Array(4)].map((_, index) => (
+            <div key={index} className="h-48 rounded bg-gray-300" />
+          ))}
+        </div>
+      </div>
+    );
   if (error) return <div>Something happened</div>;
   const videos = data?.videos;
   return (

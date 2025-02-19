@@ -1,15 +1,12 @@
+// Define the configuration for Drizzle
 import { defineConfig } from "drizzle-kit";
 
-// Define the configuration for Drizzle
 export default defineConfig({
-  dialect: "mysql", // The database dialect
-  schema: "./src/drizzle/schema/index.ts", // Path to your schema
-  out: "./src/drizzle/migrations", // Output directory
+  schema: "./src/database/schema.ts", // Path to your schema file
+  out: "./src/database/migrations", // Where migrations will be stored
+  dialect: "postgresql",
   dbCredentials: {
-    host: process.env.DATABASE_URL,
-    user: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD,
-    database: "drizzle_test",
+    url: process.env.DATABASE_URL_POOL!,
   },
 });
 // npx drizzle-kit generate
