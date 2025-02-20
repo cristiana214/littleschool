@@ -34,6 +34,8 @@ const VideoThumb = ({
       }.jpg`}
       alt="video"
       layout="fill"
+      placeholder="blur"
+      blurDataURL="data:image/png;base64,..."
       objectFit="cover"
       onClick={onClick}
     />
