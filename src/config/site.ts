@@ -4,8 +4,7 @@ export const siteConfig = {
   name: "Little School",
   description:
     "Students can learn and have fun, teachers can create quizzes and test their students, and parents can support their kids’ learning in an engaging way.",
-  title:
-    "All in one Learning Tool for Students, Teachers and Parents, currently we focus on science content",
+  title: "All in one Learning Tool for Students, Teachers and Parents",
   tagLine:
     "Explore, learn, have fun and test your knowledge with quizzes and fun science facts!",
   footerRights: "2025 Little School by cristiana. All rights reserved.",

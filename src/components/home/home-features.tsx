@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Card, CardContent } from "@/components/ui/card";
-import { Video, Award } from "lucide-react";
+import { Video, Award, Lightbulb, BookOpenCheck } from "lucide-react";
 
 export default function HomeFeatures() {
   return (
@@ -17,19 +17,22 @@ export default function HomeFeatures() {
               description: "Learn through fun and engaging videos",
             },
             {
-              icon: Award,
-              title: "Do Experiments",
-              description: "Hands-on activities to explore science concepts",
+              icon: Lightbulb,
+              title: "Generate Quizzes",
+              description:
+                "Create quizzes for practice or share it to the students",
+            },
+            {
+              icon: BookOpenCheck,
+              title: "Study Content",
+              description:
+                "Create customize study content,playlist and share it to the students",
             },
             {
               icon: Award,
               title: "Take Quizzes",
-              description: "Test your knowledge with interactive quizzes",
-            },
-            {
-              icon: Award,
-              title: "Earn Badges",
-              description: "Collect badges as you learn and achieve",
+              description:
+                "Test your knowledge with interactive quizzes & collect badges as you learn and achieve",
             },
           ].map((item, index) => (
             <Card key={index} className="transition-shadow hover:shadow-lg">

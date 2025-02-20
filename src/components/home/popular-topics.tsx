@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useVideos } from "@/hooks/query/useVideos";
 import Link from "next/link";
-import { Card, CardContent } from "../ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function OtherVideos({ videoUrl }: { videoUrl?: string }) {
   const { data, isLoading, error } = useVideos({
@@ -30,7 +30,10 @@ export default function OtherVideos({ videoUrl }: { videoUrl?: string }) {
           ?.map((video, index) => (
             <Card key={index} className="group m-4">
               <CardContent className="md:!p-3">
-                <Link href={`/videos/${video.videoUrl}/${video.url}/`}>
+                <Link
+                  href={`/videos/${video.videoUrl}/${video.url}/`}
+                  title={`${video.title} | Science for Kids`}
+                >
                   <h2 className="mb-2 mt-4  text-center text-lg font-bold hover:font-extrabold group-hover:text-amber-400 ">
                     {video.title}
                   </h2>
@@ -40,7 +43,7 @@ export default function OtherVideos({ videoUrl }: { videoUrl?: string }) {
                       `https://i.ytimg.com/vi/${video.videoUrl}/mqdefault.jpg` ||
                       "/placeholder.svg"
                     }
-                    alt={video.title}
+                    alt={`${video.title} image`}
                     width="300"
                     height="250"
                     className="mx-auto aspect-video rounded-md group-hover:shadow-xl"

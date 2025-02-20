@@ -48,17 +48,10 @@ export default function Footer() {
                   Math
                 </Link>
               </li>
+
               <li>
                 <Link
-                  href="/math/"
-                  className="transition-colors hover:text-red-300"
-                >
-                  English
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/math/"
+                  href="/coding/"
                   className="transition-colors hover:text-blue-300"
                 >
                   Coding
