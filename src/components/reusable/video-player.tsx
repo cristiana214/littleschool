@@ -8,6 +8,7 @@ import ReactPlayer from "react-player/youtube";
 let currentlyPlaying: any = null;
 
 interface Props {
+  priority?: boolean;
   src: string;
   maxRes?: boolean;
 }
@@ -16,10 +17,12 @@ const VideoThumb = ({
   src,
   onClick,
   maxRes,
+  priority,
 }: {
   src: string;
   onClick: () => void;
   maxRes: boolean;
+  priority?: boolean;
 }) => (
   <div className="flex size-full cursor-pointer items-center justify-center">
     <LucidePlay
@@ -33,6 +36,7 @@ const VideoThumb = ({
         maxRes ? "maxresdefault" : "sddefault"
       }.jpg`}
       alt="video"
+      priority={priority}
       layout="fill"
       placeholder="blur"
       blurDataURL="data:image/png;base64,..."
@@ -42,7 +46,7 @@ const VideoThumb = ({
   </div>
 );
 
-const VideoPlayer = ({ src, maxRes = false }: Props) => {
+const VideoPlayer = ({ src, maxRes = false, priority = false }: Props) => {
   const [falsyField, setFalsyField] = useState<boolean>(false);
   const playerRef = useRef<ReactPlayer | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -85,7 +89,12 @@ const VideoPlayer = ({ src, maxRes = false }: Props) => {
         />
       ) : (
         <div className="relative aspect-video size-full">
-          <VideoThumb src={src} onClick={handlePlay} maxRes={maxRes} />
+          <VideoThumb
+            src={src}
+            onClick={handlePlay}
+            maxRes={maxRes}
+            priority={priority}
+          />
         </div>
       )}
     </div>
