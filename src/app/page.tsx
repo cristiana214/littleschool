@@ -15,7 +15,6 @@ import {
 import { fetchVideos } from "@/lib/fetch/videos";
 import type { VideosQueryParams } from "@/types/v1/query";
 // import LatestContent from "@/components/home/latest-contents";
-
 export default async function IndexPage() {
   // set ssr
   const queryClient = new QueryClient();
@@ -41,6 +40,7 @@ export default async function IndexPage() {
       <HydrationBoundary state={dehydrate(queryClient)}>
         <HomeTop />
       </HydrationBoundary>
+
       <Facts />
       {/* <LatestContent /> */}
 
@@ -68,7 +68,7 @@ export default async function IndexPage() {
         </Link>
       </div>
 
-      <div className="flex min-h-screen flex-col bg-gradient-to-b from-blue-100 to-green-100">
+      <div className="mb-8 flex min-h-screen flex-col bg-gradient-to-b from-blue-100 to-green-100">
         <main className="grow">
           <HomeCategory />
           <HomeFeatures />

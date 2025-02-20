@@ -12,31 +12,35 @@ import { axios } from "@/lib/axios";
 export const fetchVideos1 = async (
   queryParams: VideosQueryParams, // accepts query parameters of type
 ): Promise<VideosApiResponse> => {
-  const response: VideosApiResponse = await axios.get(`/api/v1/videos/`, {
-    params: {
-      lessonUrl: queryParams?.lessonUrl,
-      topicUrl: queryParams?.topicUrl,
-      subjectUrl: queryParams?.subjectUrl,
+  const url = `/api/v1/videos/?${queryParams}`;
 
-      pageNum: queryParams?.pageNum,
-      pageSize: queryParams?.pageSize,
-    },
-  });
-  return response;
+  const res = await fetch(url, { cache: "no-store" }); // Prevent Next.js from caching old results
+  if (!res.ok) throw new Error("Failed to fetch videos");
+  const data = await res.json();
+  return data as VideosApiResponse;
 };
 
 export async function fetchVideos(
   queryParams: VideosQueryParams,
 ): Promise<VideosApiResponse> {
-  const response: VideosApiResponse = await axios.get(`/api/v1/videos/`, {
-    params: {
-      lessonUrl: queryParams?.lessonUrl,
-      topicUrl: queryParams?.topicUrl,
-      subjectUrl: queryParams?.subjectUrl,
+  // const url = `/api/v1/videos/?${queryParams}`;
 
-      pageNum: queryParams?.pageNum,
-      pageSize: queryParams?.pageSize,
+  // const res = await fetch(url, { cache: "no-store" }); // Prevent Next.js from caching old results
+  // if (!res.ok) throw new Error("Failed to fetch videos");
+  // const data = await res.json();
+  // return data as VideosApiResponse;
+  const response: VideosApiResponse = await axios.get(
+    `${process.env.NEXT_PUBLIC_SITE_URL}/api/v1/videos/`,
+    {
+      params: {
+        lessonUrl: queryParams?.lessonUrl,
+        topicUrl: queryParams?.topicUrl,
+        subjectUrl: queryParams?.subjectUrl,
+
+        pageNum: queryParams?.pageNum,
+        pageSize: queryParams?.pageSize,
+      },
     },
-  });
+  );
   return response;
 }
