@@ -142,3 +142,15 @@ npx husky install
   to generate secret use `$ openssl rand -base64 32`
 `  .env.example`
 
+ ### Database migration
+setup the schema in src/drizzle/schema/index.ts
+run to generate schema for migration ``$ npx drizzle-kit migrate``
+note:make sure to create the database first, based on the env.DATABASE_NAME
+run to migrate   ``$ npx drizzle-kit migrate``
+
+### SEO robots and indexing
+ google indexing ```follow index``` will only enable on production make sure to set it up in  ```.env file```.
+
+```process.env.NEXT_PUBLIC_ENVIRONMENT```
+ .env file
+ add NEXT_PUBLIC_ENVIRONMENT="production" 

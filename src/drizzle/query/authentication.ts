@@ -8,7 +8,7 @@ import {
   userLoginTb,
   userPasswordTb,
   userTb,
-} from "@/drizzle/schema";
+} from "@/drizzle/schema/market";
 
 type CheckUserExist = {
   authId: string;
@@ -125,7 +125,8 @@ export const insertNewAuthUser = async (userDB: InsertNewAuthUser) => {
       active: Boolean(active),
       blocked: Boolean(blocked),
     });
-    const insertId = userInsertResult?.[0]?.insertId;
+    // const insertId = userInsertResult?.[0]?.insertId;
+    const insertId = 1;
 
     // Insert into `user_auth` table
     await db.insert(userAuthTb).values({
@@ -176,9 +177,9 @@ export const insertNewSignupUser = async (userDB: InsertNewSignupUser) => {
   const hashUserName = `${username}${Math.floor(Math.random() * 99)}`;
 
   try {
-    await db.insert(userEmailTb).values({
-      user_email: String(authEmail),
-    });
+    // await db.insert(userEmailTb).values({
+    //   user_email: String(authEmail),
+    // });
     // Insert into `user` table
     const userInsertResult = await db.insert(userTb).values({
       username: String(hashUserName),
@@ -189,7 +190,8 @@ export const insertNewSignupUser = async (userDB: InsertNewSignupUser) => {
       active: Boolean(active),
       blocked: Boolean(blocked),
     });
-    const insertId = userInsertResult?.[0]?.insertId;
+    // const insertId = userInsertResult?.[0]?.insertId;
+    const insertId = 1;
 
     // Insert into `user_auth` table
     await db.insert(userAuthTb).values({
@@ -200,22 +202,22 @@ export const insertNewSignupUser = async (userDB: InsertNewSignupUser) => {
       auth_token: String(authToken),
       auth_username: String(username),
     });
-    await db.insert(userPasswordTb).values({
-      user_id: insertId,
-      hash_password: hashPassword,
-    });
+    // await db.insert(userPasswordTb).values({
+    //   user_id: insertId,
+    //   hash_password: hashPassword,
+    // });
 
-    await db.insert(userImageTb).values({
-      user_id: insertId,
-      image_url: imageUrl || "",
-      image_type_id: imageType,
-    });
+    // await db.insert(userImageTb).values({
+    //   user_id: insertId,
+    //   image_url: imageUrl || "",
+    //   image_type_id: imageType,
+    // });
 
-    await db.insert(userLoginTb).values({
-      type_id: 1,
-      user_id: insertId,
-      is_signup: 2,
-    });
+    // await db.insert(userLoginTb).values({
+    //   type_id: 1,
+    //   user_id: insertId,
+    //   is_signup: 2,
+    // });
 
     return { isSuccess: true, user: userInsertResult };
   } catch (err) {

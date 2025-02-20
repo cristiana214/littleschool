@@ -16,6 +16,11 @@ import Footer from "@/components/footer";
 import { Toaster } from "react-hot-toast";
 
 export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
@@ -27,10 +32,33 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  robots:
+    process.env.NEXT_PUBLIC_ENVIRONMENT === "production"
+      ? "index, follow"
+      : "noindex, nofollow",
+  keywords: [
+    "Science for kids",
+    "Little School",
+    "Kids Science",
+    "Online learning tools for students",
+  ],
   icons: {
-    icon: "/icon.ico",
-    shortcut: "/icon.ico",
-    apple: "/icon.ico",
+    icon: "https://littleschool.s3.us-west-2.amazonaws.com/icon.ico",
+    shortcut: "https://littleschool.s3.us-west-2.amazonaws.com/icon.ico",
+    apple: "https://littleschool.s3.us-west-2.amazonaws.com/icon.ico",
+  },
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: "https://littleschooltv.com",
+    images: [
+      {
+        url: "https://littleschool.s3.us-west-2.amazonaws.com/previewhome.png",
+        width: 1200,
+        height: 630,
+        alt: "Preview Image",
+      },
+    ],
   },
 };
 
@@ -45,7 +73,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <Script
         id="analytics"
         async
-        src="https://www.googletagmanager.com/gtag/js?id=G-YGPSYK24EX"
+        src="https://www.googletagmanager.com/gtag/js?id=G-JEQ0W9KH6L"
       />
       <Script
         id="analytics2"
@@ -55,17 +83,31 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', 'G-YGPSYK24EX');
+                gtag('config', 'G-JEQ0W9KH6L');
               `,
         }}
       />
+      {/* <meta
+        name="viewport"
+        content="width=device-width,initial-scale=1, maximum-scale=1.0,user-scalable=0"
+      /> */}
+      {/* {process.env.NEXT_PUBLIC_ENVIRONMENT !== "production" ? (
+        <meta name="robots" content="noindex, nofollow" />
+      ) : (
+        <meta name="robots" content="index, follow" />
+      )} */}
+
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          forcedTheme="light"
+        >
           <ReactQueryProvider>
             <NextAuthProvider>
               <Toaster position="bottom-center" reverseOrder={false} />

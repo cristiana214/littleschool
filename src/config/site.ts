@@ -4,10 +4,11 @@ export const siteConfig = {
   name: "Little School",
   description:
     "Students can learn and have fun, teachers can create quizzes and test their students, and parents can support their kids’ learning in an engaging way.",
-  title: "All in one Learning Tool for Students, Teachers and Parents",
+  title:
+    "All in one Learning Tool for Students, Teachers and Parents, currently we focus on science content",
   tagLine:
-    "Explore, learn, have fun and test your knowledge with quizzes and cool facts!",
-  footerRights: "&copy; 2025 Little School by cristiana. All rights reserved.",
+    "Explore, learn, have fun and test your knowledge with quizzes and fun science facts!",
+  footerRights: "2025 Little School by cristiana. All rights reserved.",
   mainNav: [
     {
       title: "Science",
@@ -30,11 +31,11 @@ export const siteConfig = {
       color: "text-amber-400",
     },
 
-    {
-      title: "About Us",
-      href: "/about/",
-      color: "text-red-400",
-    },
+    // {
+    //   title: "About Us",
+    //   href: "/about/",
+    //   color: "text-red-400",
+    // },
   ],
   subNav: [
     {
@@ -42,8 +43,8 @@ export const siteConfig = {
       href: "/quiz/",
     },
     {
-      title: "Natural Science",
-      href: "/natural-science/",
+      title: "Earth Science",
+      href: "/earth-science/",
     },
 
     {

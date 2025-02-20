@@ -6,12 +6,14 @@ import { Button } from "@/components/ui/button";
 import HomeTop from "@/components/home/home-top";
 import HomeCategory from "@/components/home/home-category";
 import HomeFeatures from "@/components/home/home-features";
+import Facts from "@/components/home/facts";
+// import LatestContent from "@/components/home/latest-contents";
 
 export default function IndexPage() {
   return (
-    <section className="container mx-auto grid w-full max-w-6xl  gap-6 pb-8 pt-6 ">
+    <section className=" container mx-auto mt-1 grid w-full max-w-6xl gap-6 ">
       <title>{`${siteConfig.title}| Little School`}</title>
-      <div className="mx-auto w-full py-4">
+      <div className="w-full  p-4 ">
         <h1 className="text-4xl font-bold tracking-tighter sm:text-4xl">
           {siteConfig.title}
         </h1>
@@ -21,8 +23,10 @@ export default function IndexPage() {
       </div>
 
       <HomeTop />
+      <Facts />
+      {/* <LatestContent /> */}
 
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap gap-4 px-4">
         <Link href="/coding/">
           <Button
             className="bg-blue-500 hover:animate-pulse hover:font-semibold"
