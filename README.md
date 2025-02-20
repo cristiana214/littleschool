@@ -154,3 +154,4 @@ run to migrate   ``$ npx drizzle-kit migrate``
 ```process.env.NEXT_PUBLIC_ENVIRONMENT```
  .env file
  add NEXT_PUBLIC_ENVIRONMENT="production" 
+ add NEXT_PUBLIC_SITE_URL="http://localhost:3000"  replace with actual domain

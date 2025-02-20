@@ -32,7 +32,7 @@ export default function HomeTop() {
             >
               <div className="w-full md:w-1/2">
                 <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg hover:shadow-2xl">
-                  <Video src={video.videoUrl} />
+                  <Video src={video.videoUrl} priority={index === 0} />
                 </div>
               </div>
               <div className=" flex w-full flex-col justify-center md:w-1/2">
