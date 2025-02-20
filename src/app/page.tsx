@@ -7,9 +7,26 @@ import HomeTop from "@/components/home/home-top";
 import HomeCategory from "@/components/home/home-category";
 import HomeFeatures from "@/components/home/home-features";
 import Facts from "@/components/home/facts";
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from "@tanstack/react-query";
+import { fetchVideos } from "@/lib/fetch/videos";
+import type { VideosQueryParams } from "@/types/v1/query";
 // import LatestContent from "@/components/home/latest-contents";
 
-export default function IndexPage() {
+export default async function IndexPage() {
+  // set ssr
+  const queryClient = new QueryClient();
+  const queryParams: VideosQueryParams = {
+    pageSize: 10,
+  };
+  await queryClient.prefetchQuery({
+    queryKey: ["videos", queryParams], // unique key for caching the query result
+    queryFn: () => fetchVideos(queryParams),
+  });
+
   return (
     <section className=" container mx-auto mt-1 grid w-full max-w-6xl gap-6 ">
       <title>{`${siteConfig.title}| Little School`}</title>
@@ -21,8 +38,9 @@ export default function IndexPage() {
           {siteConfig.description}
         </p>
       </div>
-
-      <HomeTop />
+      <HydrationBoundary state={dehydrate(queryClient)}>
+        <HomeTop />
+      </HydrationBoundary>
       <Facts />
       {/* <LatestContent /> */}
 
