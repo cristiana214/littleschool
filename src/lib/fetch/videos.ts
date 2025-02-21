@@ -23,24 +23,19 @@ export const fetchVideos1 = async (
 export async function fetchVideos(
   queryParams: VideosQueryParams,
 ): Promise<VideosApiResponse> {
-  // const url = `/api/v1/videos/?${queryParams}`;
+  const url =
+    typeof window === "undefined"
+      ? `${process.env.NEXT_PUBLIC_SITE_URL}/api/v1/videos/`
+      : `/api/v1/videos/`;
 
-  // const res = await fetch(url, { cache: "no-store" }); // Prevent Next.js from caching old results
-  // if (!res.ok) throw new Error("Failed to fetch videos");
-  // const data = await res.json();
-  // return data as VideosApiResponse;
-  const response: VideosApiResponse = await axios.get(
-    `${process.env.NEXT_PUBLIC_SITE_URL}/api/v1/videos/`,
-    {
-      params: {
-        lessonUrl: queryParams?.lessonUrl,
-        topicUrl: queryParams?.topicUrl,
-        subjectUrl: queryParams?.subjectUrl,
-
-        pageNum: queryParams?.pageNum,
-        pageSize: queryParams?.pageSize,
-      },
+  const response: VideosApiResponse = await axios.get(url, {
+    params: {
+      lessonUrl: queryParams?.lessonUrl,
+      topicUrl: queryParams?.topicUrl,
+      subjectUrl: queryParams?.subjectUrl,
+      pageNum: queryParams?.pageNum,
+      pageSize: queryParams?.pageSize,
     },
-  );
+  });
   return response;
 }
