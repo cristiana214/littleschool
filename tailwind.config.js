@@ -105,6 +105,10 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        roboto: ["var(--font-roboto)", "sans-serif"],
+        subdesc: ["var(--font-europa)", "sans-serif"],
+        maindesc: ["var(--font-comfortaa)", "sans-serif"],
+        maintitle: ["var(--font-montserrat)", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {
