@@ -17,7 +17,7 @@ export default function HomeTop() {
     <section className="rounded-sm bg-blue-500 py-12 text-white">
       <div className="container mx-auto px-4">
         <Link href="/videos/" title="Little School Latest Videos">
-          <h2 className="ml-4 justify-start font-maintitle  text-3xl font-bold drop-shadow-xl hover:text-amber-300">
+          <h2 className="ml-4 justify-start font-maintitle  text-3xl font-bold hover:text-amber-300 hover:drop-shadow-xl">
             Watch latest videos
           </h2>
         </Link>
@@ -37,7 +37,7 @@ export default function HomeTop() {
               </div>
               <div className=" flex w-full flex-col justify-center md:w-1/2">
                 <Link href={`/videos/${video.videoUrl}/${video.url}/`}>
-                  <h2 className="mb-4  font-maintitle text-2xl font-bold drop-shadow-xl hover:font-extrabold  hover:text-amber-300">
+                  <h2 className="mb-4  font-maintitle text-2xl font-bold hover:font-extrabold hover:text-amber-300  hover:drop-shadow-xl">
                     {video.title}
                   </h2>
                 </Link>
