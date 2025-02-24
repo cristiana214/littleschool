@@ -14,7 +14,7 @@ export default function VideoContent({ videoUrl }: { videoUrl?: string }) {
   if (isLoading)
     return (
       <section className="container mx-auto grid w-full max-w-6xl gap-6 pb-8 pt-6">
-        <section className="rounded-sm bg-blue-500 py-12 text-white">
+        <section className="bg-blue-500 py-12 text-white lg:rounded-sm">
           <div className="container mx-auto px-4">
             <div className="animate-pulse space-y-8">
               <div className="mx-auto h-10 w-3/4 rounded bg-gray-300" />
@@ -34,10 +34,12 @@ export default function VideoContent({ videoUrl }: { videoUrl?: string }) {
 
   return (
     <section className="container mx-auto grid w-full max-w-6xl  gap-6 pb-8 pt-6 ">
-      <div className="rounded-sm  bg-blue-500 py-12 text-white">
+      <div className="bg-blue-500  py-12 text-white lg:rounded-sm">
         <title>{`${video?.title} | Little School`}</title>
         <div className="container mx-auto px-4">
-          <h1 className="text-center  text-4xl font-bold">{video?.title}</h1>
+          <h1 className="text-center text-4xl font-bold drop-shadow-lg">
+            {video?.title}
+          </h1>
           <h2 className="mb-2 justify-self-center text-xl font-semibold">
             by Little School
           </h2>

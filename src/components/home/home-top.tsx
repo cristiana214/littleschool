@@ -14,7 +14,7 @@ export default function HomeTop() {
   const videos = data?.videos;
 
   return (
-    <section className="rounded-sm bg-blue-500 py-12 text-white">
+    <section className="bg-blue-500 py-12 text-white xl:rounded-sm">
       <div className="container mx-auto px-4">
         <Link href="/videos/" title="Little School Latest Videos">
           <h2 className="ml-4 justify-start font-maintitle  text-3xl font-bold hover:text-amber-300 hover:drop-shadow-xl">

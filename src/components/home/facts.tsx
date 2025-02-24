@@ -7,7 +7,7 @@ export default function Facts() {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
-        <h3 className="mb-4 font-maintitle text-2xl font-semibold ">
+        <h3 className="mb-4 font-maintitle text-2xl font-semibold drop-shadow-lg ">
           Science Facts
         </h3>
         <div className="grid grid-cols-1 gap-4  md:grid-cols-3">
@@ -27,10 +27,12 @@ export default function Facts() {
           ].map((item, index) => (
             <Card
               key={index}
-              className={`${item.color} shadow-md transition-transform duration-200 hover:scale-105`}
+              className={`${item.color} group shadow-md transition-transform duration-200 hover:scale-105 hover:shadow-lg`}
             >
               <CardContent className="p-4">
-                <Star className="mb-2 size-8 text-sky-500" />
+                <Star
+                  className={` mb-2 size-8 text-sky-500 drop-shadow-2xl  group-hover:text-sky-800`}
+                />
                 <p className="text-sky-850 font-subdesc font-normal">
                   {item.fact}
                 </p>

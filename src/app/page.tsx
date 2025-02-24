@@ -70,7 +70,7 @@ export default async function IndexPage() {
 
       <div className="mb-8 flex min-h-screen flex-col ">
         <main className="grow ">
-          <HomeCategory className="rounded-t-sm bg-gradient-to-b from-blue-100 to-amber-100" />
+          <HomeCategory className="bg-gradient-to-b  from-blue-100 to-amber-100 lg:rounded-t-sm" />
           <HomeFeatures />
         </main>
       </div>

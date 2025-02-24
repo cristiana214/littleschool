@@ -4,9 +4,9 @@ import { Video, Award, Lightbulb, BookOpenCheck } from "lucide-react";
 
 export default function HomeFeatures() {
   return (
-    <section className="rounded-b-sm bg-blue-100 py-16 ">
+    <section className="bg-blue-100 py-16 lg:rounded-b-sm ">
       <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-center  text-3xl font-bold">
+        <h2 className="mb-12 text-center  text-3xl font-bold drop-shadow-lg">
           Fun Ways to Learn
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
