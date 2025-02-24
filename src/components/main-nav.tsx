@@ -23,7 +23,7 @@ export function MainNav({ items }: MainNavProps) {
           className="border-1 rounded-md"
         />
         <div className="flex flex-col">
-          <span className="mt-2 inline-block font-bold leading-none ">
+          <span className="mt-2 inline-block  font-bold leading-none ">
             {siteConfig.name}
           </span>
           <span className="text-start text-xs leading-none">beta</span>

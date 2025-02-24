@@ -9,7 +9,6 @@ import {
 } from "@/drizzle/schema";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import page from "@/app/page";
 
 const getBaseQuery = () =>
   // select all videos
@@ -22,8 +21,8 @@ const getBaseQuery = () =>
       url: videos.url,
       videoUrl: videos.videoUrl,
       // subjectUrl: subjects.url || "",
-      // topicUrl: topics.url || "",
       // subjectTitle: subjects.title || "",
+      // topicUrl: topics.url || "",
       // topicTitle: topics.title || "",
       updatedAt: videos.updatedAt,
     })
