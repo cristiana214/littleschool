@@ -23,7 +23,9 @@ export default function OtherVideos({ videoUrl }: { videoUrl?: string }) {
   const videos = data?.videos;
   return (
     <section>
-      <h2 className="mx-3 mb-4 text-2xl font-semibold">Other Video Topics</h2>
+      <h2 className="mx-3 my-4 font-maintitle text-2xl font-semibold  ">
+        Other Video Topics
+      </h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
         {videos
           ?.filter((video) => video.videoUrl !== videoUrl)

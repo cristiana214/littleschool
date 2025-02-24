@@ -1,6 +1,9 @@
 import {
-  JetBrains_Mono as FontMono,
+  Comfortaa,
   Inter as FontSans,
+  Montserrat,
+  Roboto,
+  Work_Sans,
 } from "next/font/google";
 
 export const fontSans = FontSans({
@@ -8,7 +11,25 @@ export const fontSans = FontSans({
   variable: "--font-sans",
 });
 
-export const fontMono = FontMono({
+// Load the fonts
+export const fontMontserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-montserrat",
+});
+
+export const fontComfortaa = Comfortaa({
+  subsets: ["latin"],
+  variable: "--font-comfortaa",
+});
+
+export const fontRoboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-roboto",
+});
+
+export const fontEuropa = Work_Sans({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-europa", // Custom CSS variable
 });

@@ -28,12 +28,12 @@ export default async function IndexPage() {
 
   return (
     <section className=" container mx-auto mt-1 grid w-full max-w-6xl gap-6 ">
-      <title>{`${siteConfig.title}| Little School`}</title>
-      <div className="w-full  p-4 ">
-        <h1 className="text-4xl font-bold tracking-tighter sm:text-4xl">
+      <title>{`${siteConfig.title} | Little School`}</title>
+      <div className="mt-8 w-full   p-4">
+        <h1 className="font-maintitle text-4xl font-bold tracking-tighter drop-shadow-xl sm:text-4xl">
           {siteConfig.title}
         </h1>
-        <p className="ml-2 mt-4 max-w-[900px]   text-lg text-muted-foreground ">
+        <p className="ml-2 mt-4 max-w-[900px] font-subdesc   text-xl text-muted-foreground drop-shadow-lg ">
           {siteConfig.description}
         </p>
       </div>
@@ -68,9 +68,9 @@ export default async function IndexPage() {
         </Link>
       </div>
 
-      <div className="mb-8 flex min-h-screen flex-col bg-gradient-to-b from-blue-100 to-green-100">
-        <main className="grow">
-          <HomeCategory />
+      <div className="mb-8 flex min-h-screen flex-col ">
+        <main className="grow ">
+          <HomeCategory className="rounded-t-sm bg-gradient-to-b from-blue-100 to-amber-100" />
           <HomeFeatures />
         </main>
       </div>

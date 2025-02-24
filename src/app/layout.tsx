@@ -3,7 +3,7 @@ import "@/globals.css";
 import type { Metadata, Viewport } from "next";
 
 import { siteConfig } from "@/config/site";
-import { fontSans } from "@/lib/fonts";
+
 import { cn } from "@/lib/utils";
 import { SiteHeader } from "@/components/site-header";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
@@ -14,6 +14,14 @@ import { NextAuthProvider } from "@/lib/providers/session-providers";
 import Script from "next/script";
 import Footer from "@/components/footer";
 import { Toaster } from "react-hot-toast";
+
+import {
+  fontSans,
+  fontMontserrat,
+  fontComfortaa,
+  fontEuropa,
+  fontRoboto,
+} from "@/lib/fonts";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -101,6 +109,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
+          fontEuropa.variable,
+          fontMontserrat.variable,
+          fontComfortaa.variable,
+          fontRoboto.variable,
         )}
       >
         <ThemeProvider

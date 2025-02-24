@@ -9,7 +9,7 @@ export default function Videos() {
       <section className="bg-blue-500 py-12 text-white">
         <div className="container mx-auto px-4">
           {/* <div className="space-y-8"> */}
-          <title> Little School Videos!</title>
+          <title>Little School Videos!</title>
           <h1 className="text-center text-4xl font-bold">
             Little School Videos!
           </h1>

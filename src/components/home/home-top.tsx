@@ -14,10 +14,10 @@ export default function HomeTop() {
   const videos = data?.videos;
 
   return (
-    <section className="bg-blue-500 py-12 text-white">
+    <section className="rounded-sm bg-blue-500 py-12 text-white">
       <div className="container mx-auto px-4">
         <Link href="/videos/" title="Little School Latest Videos">
-          <h2 className="ml-4 justify-start text-3xl  font-bold hover:text-amber-300">
+          <h2 className="ml-4 justify-start font-maintitle  text-3xl font-bold drop-shadow-xl hover:text-amber-300">
             Watch latest videos
           </h2>
         </Link>
@@ -37,12 +37,12 @@ export default function HomeTop() {
               </div>
               <div className=" flex w-full flex-col justify-center md:w-1/2">
                 <Link href={`/videos/${video.videoUrl}/${video.url}/`}>
-                  <h2 className="mb-4 text-2xl font-bold hover:font-extrabold hover:text-amber-300 ">
+                  <h2 className="mb-4  font-maintitle text-2xl font-bold drop-shadow-xl hover:font-extrabold  hover:text-amber-300">
                     {video.title}
                   </h2>
                 </Link>
-                <p className="group text-lg">
-                  <span className="group-hover:animate-pulse">
+                <p className="group font-maindesc text-lg">
+                  <span className="  font-normal group-hover:animate-pulse">
                     {video.description?.split("?")[0]}
                   </span>{" "}
                   {video.description?.split("?")[1]}
