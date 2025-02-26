@@ -14,6 +14,7 @@ import {
 } from "@tanstack/react-query";
 import { fetchVideos } from "@/lib/fetch/videos";
 import type { VideosQueryParams } from "@/types/v1/query";
+import WaitlistForm from "@/components/waitlist-form";
 // import LatestContent from "@/components/home/latest-contents";
 export default async function IndexPage() {
   // set ssr
@@ -30,17 +31,18 @@ export default async function IndexPage() {
     <section className=" container mx-auto mt-1 grid w-full max-w-6xl gap-6 ">
       <title>{`${siteConfig.title} | Little School`}</title>
       <div className="mt-8 w-full   p-4">
-        <h1 className="font-maintitle text-4xl font-bold tracking-tighter drop-shadow-xl sm:text-4xl">
+        <h1 className="font-maintitle text-4xl font-bold tracking-tighter drop-shadow-xl ">
           {siteConfig.title}
         </h1>
         <p className="ml-2 mt-4 max-w-[900px] font-subdesc   text-xl text-muted-foreground drop-shadow-lg ">
           {siteConfig.description}
         </p>
       </div>
+
       <HydrationBoundary state={dehydrate(queryClient)}>
         <HomeTop />
       </HydrationBoundary>
-
+      <WaitlistForm />
       <Facts />
       {/* <LatestContent /> */}
 
@@ -72,6 +74,7 @@ export default async function IndexPage() {
         <main className="grow ">
           <HomeCategory className="bg-gradient-to-b  from-blue-100 to-amber-100 lg:rounded-t-sm" />
           <HomeFeatures />
+          {/* <WaitlistForm /> */}
         </main>
       </div>
 
