@@ -42,7 +42,7 @@ export default function HomeTop() {
                   </h2>
                 </Link>
                 <p className="group font-maindesc text-lg">
-                  <span className="  font-normal group-hover:animate-pulse">
+                  <span className="  font-normal drop-shadow-sm group-hover:animate-pulse">
                     {video.description?.split("?")[0]}
                   </span>{" "}
                   {video.description?.split("?")[1]}

@@ -30,11 +30,11 @@ export default async function IndexPage() {
   return (
     <section className=" container mx-auto mt-1 grid w-full max-w-6xl gap-6 ">
       <title>{`${siteConfig.title} | Little School`}</title>
-      <div className="mt-8 w-full   p-4">
-        <h1 className="font-maintitle text-4xl font-bold tracking-tighter drop-shadow-xl ">
+      <div className="mt-2 w-full p-4">
+        <h1 className="font-maintitle text-4xl font-semibold tracking-tighter drop-shadow-md">
           {siteConfig.title}
         </h1>
-        <p className="ml-2 mt-4 max-w-[900px] font-subdesc   text-xl text-muted-foreground drop-shadow-lg ">
+        <p className="ml-2 mt-4 max-w-[900px] font-subdesc text-xl text-muted-foreground drop-shadow-md ">
           {siteConfig.description}
         </p>
       </div>
