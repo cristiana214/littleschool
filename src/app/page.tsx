@@ -42,7 +42,7 @@ export default async function IndexPage() {
       <HydrationBoundary state={dehydrate(queryClient)}>
         <HomeTop />
       </HydrationBoundary>
-      <WaitlistForm />
+
       <Facts />
       {/* <LatestContent /> */}
 
@@ -74,7 +74,7 @@ export default async function IndexPage() {
         <main className="grow ">
           <HomeCategory className="bg-gradient-to-b  from-blue-100 to-amber-100 lg:rounded-t-sm" />
           <HomeFeatures />
-          {/* <WaitlistForm /> */}
+          <WaitlistForm />
         </main>
       </div>
 
