@@ -30,7 +30,7 @@ export default async function IndexPage() {
   return (
     <section className=" container mx-auto mt-1 grid w-full max-w-6xl gap-6 ">
       <title>{`${siteConfig.title} | Little School`}</title>
-      <div className="mt-2 w-full p-4">
+      <div className="mt-8 w-full p-4">
         <h1 className="font-maintitle text-4xl font-semibold tracking-tighter drop-shadow-md">
           {siteConfig.title}
         </h1>
@@ -47,7 +47,7 @@ export default async function IndexPage() {
       {/* <LatestContent /> */}
 
       <div className="flex flex-wrap gap-4 px-4">
-        <Link href="/coding/">
+        <Link href="/coding/" title="Coding for kids">
           <Button
             className="bg-blue-500 hover:animate-pulse hover:font-semibold"
             rel="noreferrer"
@@ -55,12 +55,12 @@ export default async function IndexPage() {
             Coding
           </Button>
         </Link>
-        <Link href="/math/">
+        <Link href="/math/" title="Math for kids">
           <Button className="bg-green-400 hover:font-semibold" rel="noreferrer">
             Math
           </Button>
         </Link>
-        <Link href="/science/">
+        <Link href="/science/" title="Science for kids">
           <Button
             className="bg-orange-500 hover:font-semibold"
             rel="noreferrer"

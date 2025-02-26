@@ -14,7 +14,7 @@ export default function HomeTop() {
   const videos = data?.videos;
 
   return (
-    <section className="bg-blue-500 py-12 text-white xl:rounded-sm">
+    <section className="bg-green-300 py-12 text-black xl:rounded-sm">
       <div className="container mx-auto px-4">
         <Link href="/videos/" title="Little School Latest Videos">
           <h2 className="ml-4 justify-start font-maintitle  text-3xl font-bold hover:text-amber-300 hover:drop-shadow-xl">
@@ -36,7 +36,10 @@ export default function HomeTop() {
                 </div>
               </div>
               <div className=" flex w-full flex-col justify-center md:w-1/2">
-                <Link href={`/videos/${video.videoUrl}/${video.url}/`}>
+                <Link
+                  href={`/videos/${video.videoUrl}/${video.url}/`}
+                  title={video.title}
+                >
                   <h2 className="mb-4  font-maintitle text-2xl font-bold hover:font-extrabold hover:text-amber-300  hover:drop-shadow-xl">
                     {video.title}
                   </h2>
