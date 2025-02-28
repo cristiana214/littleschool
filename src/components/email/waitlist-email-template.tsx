@@ -20,7 +20,7 @@ export default function WaitlistEmailTemplate({ email }: { email: string }) {
       <p>Hello my friend,</p>
       <p>
         Thank you for signing up for the waitlist! We will notify you as soon as
-        the feature is available.
+        the new features and content are available!.
       </p>
       <p>
         Best Regards,

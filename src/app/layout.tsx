@@ -20,7 +20,6 @@ import {
   fontMontserrat,
   fontComfortaa,
   fontEuropa,
-  fontRoboto,
 } from "@/lib/fonts";
 
 export const viewport: Viewport = {
@@ -112,7 +111,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           fontEuropa.variable,
           fontMontserrat.variable,
           fontComfortaa.variable,
-          fontRoboto.variable,
         )}
       >
         <ThemeProvider
