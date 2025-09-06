@@ -37,6 +37,7 @@ export default async function IndexPage() {
         <p className="ml-2 mt-4 max-w-[900px] font-subdesc text-xl text-muted-foreground drop-shadow-md ">
           {siteConfig.description}
         </p>
+        <WaitlistForm />
       </div>
 
       <HydrationBoundary state={dehydrate(queryClient)}>
