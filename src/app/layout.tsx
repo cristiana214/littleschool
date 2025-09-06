@@ -46,6 +46,7 @@ export const metadata: Metadata = {
   keywords: [
     "Science for kids",
     "Little School",
+    "Little School TV YouTube",
     "Kids Science",
     "Online learning tools for students",
   ],

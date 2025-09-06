@@ -101,7 +101,7 @@ export default function SubjectLayout({
           </section>
         ) : null}
 
-        <section>
+        {/* <section>
           <h2 className={`mb-4 text-3xl font-semibold ${secondaryColor}`}>
             Quiz
           </h2>
@@ -120,7 +120,7 @@ export default function SubjectLayout({
               </Button>
             </CardContent>
           </Card>
-        </section>
+        </section> */}
       </div>
     </div>
   );
