@@ -1,5 +1,5 @@
 import { db } from "@/drizzle/db";
-import { eq } from "drizzle-orm";
+import { desc, eq } from "drizzle-orm";
 import {
   lessons,
   subjects,
@@ -55,6 +55,7 @@ export async function GET(req: NextRequest) {
       videosQuery = getBaseQuery()
         .limit(pageSize)
         .offset(offset)
+        .orderBy(desc(videos.id))
         .groupBy(videos.id);
     }
     // execute the query

@@ -20,7 +20,6 @@ import {
   fontMontserrat,
   fontComfortaa,
   fontEuropa,
-  fontRoboto,
 } from "@/lib/fonts";
 
 export const viewport: Viewport = {
@@ -47,6 +46,7 @@ export const metadata: Metadata = {
   keywords: [
     "Science for kids",
     "Little School",
+    "Little School TV YouTube",
     "Kids Science",
     "Online learning tools for students",
   ],
@@ -112,7 +112,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           fontEuropa.variable,
           fontMontserrat.variable,
           fontComfortaa.variable,
-          fontRoboto.variable,
         )}
       >
         <ThemeProvider

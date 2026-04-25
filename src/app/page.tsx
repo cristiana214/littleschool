@@ -14,6 +14,7 @@ import {
 } from "@tanstack/react-query";
 import { fetchVideos } from "@/lib/fetch/videos";
 import type { VideosQueryParams } from "@/types/v1/query";
+import WaitlistForm from "@/components/waitlist-form";
 // import LatestContent from "@/components/home/latest-contents";
 export default async function IndexPage() {
   // set ssr
@@ -29,14 +30,16 @@ export default async function IndexPage() {
   return (
     <section className=" container mx-auto mt-1 grid w-full max-w-6xl gap-6 ">
       <title>{`${siteConfig.title} | Little School`}</title>
-      <div className="mt-8 w-full   p-4">
-        <h1 className="font-maintitle text-4xl font-bold tracking-tighter drop-shadow-xl sm:text-4xl">
+      <div className="mt-8 w-full p-4">
+        <h1 className="text-4xl font-semibold tracking-tighter drop-shadow-lg">
           {siteConfig.title}
         </h1>
-        <p className="ml-2 mt-4 max-w-[900px] font-subdesc   text-xl text-muted-foreground drop-shadow-lg ">
+        <p className="ml-2 mt-4 max-w-[900px] font-subdesc text-xl text-muted-foreground drop-shadow-md ">
           {siteConfig.description}
         </p>
+        <WaitlistForm />
       </div>
+
       <HydrationBoundary state={dehydrate(queryClient)}>
         <HomeTop />
       </HydrationBoundary>
@@ -45,7 +48,7 @@ export default async function IndexPage() {
       {/* <LatestContent /> */}
 
       <div className="flex flex-wrap gap-4 px-4">
-        <Link href="/coding/">
+        <Link href="/coding/" title="Coding for kids">
           <Button
             className="bg-blue-500 hover:animate-pulse hover:font-semibold"
             rel="noreferrer"
@@ -53,12 +56,12 @@ export default async function IndexPage() {
             Coding
           </Button>
         </Link>
-        <Link href="/math/">
+        <Link href="/math/" title="Math for kids">
           <Button className="bg-green-400 hover:font-semibold" rel="noreferrer">
             Math
           </Button>
         </Link>
-        <Link href="/science/">
+        <Link href="/science/" title="Science for kids">
           <Button
             className="bg-orange-500 hover:font-semibold"
             rel="noreferrer"
@@ -70,8 +73,9 @@ export default async function IndexPage() {
 
       <div className="mb-8 flex min-h-screen flex-col ">
         <main className="grow ">
-          <HomeCategory className="rounded-t-sm bg-gradient-to-b from-blue-100 to-amber-100" />
+          <HomeCategory className="bg-gradient-to-b  from-blue-100 to-amber-100 lg:rounded-t-sm" />
           <HomeFeatures />
+          <WaitlistForm />
         </main>
       </div>
 

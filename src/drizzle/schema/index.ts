@@ -5,6 +5,7 @@ import {
   timestamp,
   integer,
   boolean,
+  varchar,
 } from "drizzle-orm/pg-core";
 
 export const subjects = pgTable("subjects", {
@@ -81,4 +82,10 @@ export const videoLessons = pgTable("video_lessons", {
     .notNull(),
   active: boolean("active").default(true),
   createdAt: timestamp("created_at").defaultNow(),
+});
+
+export const emails = pgTable("waitlist", {
+  id: serial("id").primaryKey(),
+  email: varchar("email", { length: 255 }).unique().notNull(),
+  created_at: timestamp("created_at").defaultNow().notNull(),
 });

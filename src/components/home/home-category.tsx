@@ -14,7 +14,7 @@ export default function HomeCategory({ className }: { className?: string }) {
   return (
     <section className={`  py-16 ${className}`}>
       <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-center text-3xl font-bold">
+        <h2 className="mb-12 text-center text-3xl font-bold drop-shadow-lg">
           Explore Science Categories
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">

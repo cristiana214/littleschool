@@ -14,10 +14,10 @@ export default function HomeTop() {
   const videos = data?.videos;
 
   return (
-    <section className="rounded-sm bg-blue-500 py-12 text-white">
+    <section className="bg-blue-500 py-12 text-zinc-100 xl:rounded-sm">
       <div className="container mx-auto px-4">
         <Link href="/videos/" title="Little School Latest Videos">
-          <h2 className="ml-4 justify-start font-maintitle  text-3xl font-bold drop-shadow-xl hover:text-amber-300">
+          <h2 className="ml-4 justify-start font-maintitle  text-3xl font-bold hover:text-amber-300 hover:drop-shadow-xl">
             Watch latest videos
           </h2>
         </Link>
@@ -32,17 +32,24 @@ export default function HomeTop() {
             >
               <div className="w-full md:w-1/2">
                 <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg hover:shadow-2xl">
-                  <Video src={video.videoUrl} priority={index === 0} />
+                  <Video
+                    src={video.videoUrl}
+                    priority={index === 0}
+                    maxRes={index !== 0}
+                  />
                 </div>
               </div>
-              <div className=" flex w-full flex-col justify-center md:w-1/2">
-                <Link href={`/videos/${video.videoUrl}/${video.url}/`}>
-                  <h2 className="mb-4  font-maintitle text-2xl font-bold drop-shadow-xl hover:font-extrabold  hover:text-amber-300">
+              <div className="flex w-full flex-col justify-center md:w-1/2">
+                <Link
+                  href={`/videos/${video.videoUrl}/${video.url}/`}
+                  title={video.title}
+                >
+                  <h2 className="mb-4  font-maintitle text-2xl font-bold hover:font-extrabold hover:text-amber-300  hover:drop-shadow-xl">
                     {video.title}
                   </h2>
                 </Link>
                 <p className="group font-maindesc text-lg">
-                  <span className="  font-normal group-hover:animate-pulse">
+                  <span className="  font-normal drop-shadow-sm group-hover:animate-pulse">
                     {video.description?.split("?")[0]}
                   </span>{" "}
                   {video.description?.split("?")[1]}
